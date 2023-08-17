@@ -30,9 +30,10 @@ const search = async (searchTerm: string) => {
 
 const SearchResults = async ({ params: { searchTerm } }: PageProps) => {
   const searchResults = await search(searchTerm);
+  const decodedString = decodeURI(searchTerm);
   return (
     <div>
-      <p className="text-gray-500 text-sm">You seached for: {searchTerm}</p>
+      <p className="text-gray-500 text-sm">You seached for: {decodedString}</p>
       <ol className=" space-y-5 p-5 divide-y-2">
         {searchResults.organic_results.map((result) => (
           <li key={result.position} className="list-decimal">
