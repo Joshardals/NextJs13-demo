@@ -24,7 +24,6 @@ const search = async (searchTerm: string) => {
   );
 
   const data: SearchResults = await res.json();
-  console.log(data);
   return data;
 };
 
